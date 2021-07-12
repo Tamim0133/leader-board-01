@@ -4,9 +4,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
 main {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
-
 body {
   font-family: "Poppins", sans-serif;
   background: #e5e5e5;
@@ -15,6 +15,8 @@ body {
   background-color: #ffffff;
   padding: 30px;
   width: 870px;
+  margin-top: 21px;
+  border-radius: 5px;
 }
 .section-title {
   color: #562eff;
@@ -29,6 +31,7 @@ body {
 .player {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 .player img {
   height: 56px;
@@ -40,31 +43,109 @@ body {
 }
 hr {
   margin-top: 30px;
+  margin-bottom: 20px;
+  border: 1px solid #d1d1d1;
 }
-  /*----------------
+/*----------------
    top blog styles 
    -----------------*/
-   .blogs .thumbnail img{
-    width: 177px;
-    height: 117px;
+.blogs .thumbnail img {
+  width: 177px;
+  height: 117px;
+}
+.blogs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.blog {
+  display: flex;
+}
+.blog-info {
+  margin-left: 16px;
+}
+.blog-title {
+  font-size: 20px;
+}
+.blog-author {
+  color: #9f9f9f;
+  font-size: 16px;
+}
+.blog-author a {
+  text-decoration: none;
+  font-size: 16px;
+  color: #562eff;
+}
+/* -------------------
+latest-corses style
+--------------------- */
+.course-bannar img {
+  width: 224px;
+  height: 104px;
+}
+.fa-star{
+  font-size: 12px;
+}
+.filled{
+  color: #FFC014;
+}
+.unfilled{
+  color: #AEAEAE;
+}
+.course-info{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+ 
+.courses{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-column-gap: 24px;  
+}
+/*------------------------------------
+----------------------------------------
+ making responsive for mobile users 
+------------------------------------
+-------------------------------------- */
+ @media (max-width:688px) {
+    .players, .blogs , .courses{
+      grid-template-columns: repeat(1,1fr);
+     
+    }
+    .player ,.blog,.course-info {
+      flex-direction: column;
+      align-items: center;
+    }
+    .container{
+      width: 100%;
+    }
+    .courses{
+      text-align: center;
+    }
+     
+   
+ }
+ /*--------------------------------------
+  making responsive for tablet users 
+ ------------------------------------ */
+ @media (min-width:689px) and (max-width:992px) {
+  .players, .blogs , .courses{
+    grid-template-columns: repeat(2,1fr);
+   
+  }
+  .player ,.blog,.course-info {
+    flex-direction: column;
+    align-items: center;
+  }
+  .container{
+    width: 100%;
+  }
+  .courses{
+    text-align: center;
+  }
+   .section-title{
+     text-align: center;
    }
-.blog{
-    display: flex;
-}
-.blog-info{
-    margin-left: 16px;
-
-}
-.blog-title{font-size: 20px;
-
-}
-.blog-author{
-    color: #9F9F9F;
-    font-size: 16px;
-}
-.blog-author a{
-    text-decoration: none;
-    font-size: 16px;
-    color: #562EFF;
-
-}
+   
+ }
+  
